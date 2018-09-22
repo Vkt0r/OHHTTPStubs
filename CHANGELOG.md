@@ -1,5 +1,8 @@
 # OHHTTPStubs — CHANGELOG
 
+* Updated the project to Swift 4.2 and Xcode 10.  
+  [@Vkt0r](https://github.com/Vkt0r)
+
 ## [6.1.0](https://github.com/AliSoftware/OHHTTPStubs/releases/tag/6.1.0)
 
 * Updated deployment target for the pod to 7.0 to remove warning for old APIs.  
