@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <deployment version="4608" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Menlo.ttc">
-            <string>Menlo-Regular</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UIApplication"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -21,16 +17,14 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="hNk-Tx-ptj"/>
             <connections>
                 <outlet property="rootViewController" destination="21" id="22"/>
             </connections>
+            <point key="canvasLocation" x="54" y="419"/>
         </window>
         <viewController id="21" customClass="MainViewController">
-            <layoutGuides>
-                <viewControllerLayoutGuide type="top" id="VI9-PC-gUV"/>
-                <viewControllerLayoutGuide type="bottom" id="K7l-SA-c1Y"/>
-            </layoutGuides>
-            <view key="view" contentMode="scaleToFill" id="1">
+            <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="1">
                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
@@ -56,7 +50,7 @@
                         <rect key="frame" x="145.5" y="71" width="51" height="31"/>
                     </switch>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29">
-                        <rect key="frame" x="314" y="72" width="36" height="30"/>
+                        <rect key="frame" x="314" y="71.5" width="36" height="30"/>
                         <state key="normal" title="Clear">
                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </state>
@@ -159,33 +153,34 @@
                         <color key="backgroundColor" red="0.89892220497131348" green="0.89892220497131348" blue="0.89892220497131348" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </imageView>
                 </subviews>
-                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="17" firstAttribute="centerY" secondItem="29" secondAttribute="centerY" id="1q6-Z9-hwB"/>
-                    <constraint firstItem="7" firstAttribute="top" secondItem="VI9-PC-gUV" secondAttribute="bottom" constant="20" id="28a-Q5-lKQ"/>
-                    <constraint firstItem="9" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="765-kd-th9"/>
+                    <constraint firstItem="7" firstAttribute="top" secondItem="Nk4-ec-Fkl" secondAttribute="top" constant="20" id="28a-Q5-lKQ"/>
+                    <constraint firstItem="9" firstAttribute="leading" secondItem="Nk4-ec-Fkl" secondAttribute="leading" constant="20" id="765-kd-th9"/>
                     <constraint firstItem="15" firstAttribute="centerY" secondItem="17" secondAttribute="centerY" id="BJa-C2-qAA"/>
                     <constraint firstItem="6" firstAttribute="top" secondItem="P7g-mD-orR" secondAttribute="bottom" constant="4" id="C5w-bc-4Mm"/>
                     <constraint firstItem="P7g-mD-orR" firstAttribute="top" secondItem="15" secondAttribute="bottom" constant="15" id="CAp-nr-meX"/>
-                    <constraint firstItem="P7g-mD-orR" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="MxU-P7-I90"/>
+                    <constraint firstItem="P7g-mD-orR" firstAttribute="leading" secondItem="Nk4-ec-Fkl" secondAttribute="leading" constant="20" id="MxU-P7-I90"/>
                     <constraint firstItem="5" firstAttribute="centerY" secondItem="7" secondAttribute="centerY" id="Npk-b1-BEh"/>
                     <constraint firstItem="6" firstAttribute="height" secondItem="9" secondAttribute="height" id="O7b-pH-aew"/>
                     <constraint firstItem="15" firstAttribute="leading" secondItem="7" secondAttribute="leading" id="Q5Y-vm-6Qt"/>
-                    <constraint firstAttribute="trailing" secondItem="6" secondAttribute="trailing" constant="20" id="R83-mU-Tvo"/>
-                    <constraint firstAttribute="trailing" secondItem="9" secondAttribute="trailing" constant="20" id="Tec-py-LLn"/>
-                    <constraint firstItem="7" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="b56-dn-aLL"/>
+                    <constraint firstItem="Nk4-ec-Fkl" firstAttribute="trailing" secondItem="6" secondAttribute="trailing" constant="20" id="R83-mU-Tvo"/>
+                    <constraint firstItem="Nk4-ec-Fkl" firstAttribute="trailing" secondItem="9" secondAttribute="trailing" constant="20" id="Tec-py-LLn"/>
+                    <constraint firstItem="7" firstAttribute="leading" secondItem="Nk4-ec-Fkl" secondAttribute="leading" constant="20" id="b56-dn-aLL"/>
                     <constraint firstItem="56B-Sg-JRy" firstAttribute="top" secondItem="6" secondAttribute="bottom" constant="8" id="cfc-Il-CLJ"/>
-                    <constraint firstAttribute="trailing" secondItem="P7g-mD-orR" secondAttribute="trailing" constant="20" id="fGr-GS-vpT"/>
-                    <constraint firstItem="56B-Sg-JRy" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="gNp-er-C7w"/>
-                    <constraint firstAttribute="trailing" secondItem="56B-Sg-JRy" secondAttribute="trailing" constant="20" id="hiJ-Ey-4sv"/>
+                    <constraint firstItem="Nk4-ec-Fkl" firstAttribute="trailing" secondItem="P7g-mD-orR" secondAttribute="trailing" constant="20" id="fGr-GS-vpT"/>
+                    <constraint firstItem="56B-Sg-JRy" firstAttribute="leading" secondItem="Nk4-ec-Fkl" secondAttribute="leading" constant="20" id="gNp-er-C7w"/>
+                    <constraint firstItem="Nk4-ec-Fkl" firstAttribute="trailing" secondItem="56B-Sg-JRy" secondAttribute="trailing" constant="20" id="hiJ-Ey-4sv"/>
                     <constraint firstItem="15" firstAttribute="top" secondItem="7" secondAttribute="bottom" constant="15" id="jjN-F1-T6l"/>
                     <constraint firstItem="9" firstAttribute="top" secondItem="56B-Sg-JRy" secondAttribute="bottom" constant="4" id="lTD-AO-ZVF"/>
                     <constraint firstItem="29" firstAttribute="trailing" secondItem="5" secondAttribute="trailing" id="pR6-YF-VKr"/>
-                    <constraint firstItem="K7l-SA-c1Y" firstAttribute="top" secondItem="9" secondAttribute="bottom" constant="20" id="sHR-Bp-an1"/>
-                    <constraint firstAttribute="trailing" secondItem="5" secondAttribute="trailing" constant="25" id="sWR-rO-eaG"/>
-                    <constraint firstItem="6" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="20" id="wum-6F-96c"/>
+                    <constraint firstItem="Nk4-ec-Fkl" firstAttribute="bottom" secondItem="9" secondAttribute="bottom" constant="20" id="sHR-Bp-an1"/>
+                    <constraint firstItem="Nk4-ec-Fkl" firstAttribute="trailing" secondItem="5" secondAttribute="trailing" constant="25" id="sWR-rO-eaG"/>
+                    <constraint firstItem="6" firstAttribute="leading" secondItem="Nk4-ec-Fkl" secondAttribute="leading" constant="20" id="wum-6F-96c"/>
                     <constraint firstItem="17" firstAttribute="leading" secondItem="15" secondAttribute="trailing" constant="20" id="yrz-A0-STS"/>
                 </constraints>
+                <viewLayoutGuide key="safeArea" id="Nk4-ec-Fkl"/>
             </view>
             <extendedEdge key="edgesForExtendedLayout"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -196,6 +191,7 @@
                 <outlet property="installTextStubSwitch" destination="41" id="47"/>
                 <outlet property="textView" destination="6" id="24"/>
             </connections>
+            <point key="canvasLocation" x="825" y="133"/>
         </viewController>
     </objects>
 </document>

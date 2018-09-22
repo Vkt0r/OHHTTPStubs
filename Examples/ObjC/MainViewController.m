@@ -35,12 +35,11 @@
         NSLog(@"[OHHTTPStubs] Request to %@ has been stubbed with %@", request.URL, stub.name);
     }];
 }
-- (void)viewDidUnload
+- (void)dealloc
 {
     [self setTextView:nil];
     [self setImageView:nil];
     [self setDelaySwitch:nil];
-    [super viewDidUnload];
 }
 
 - (BOOL)shouldUseDelay {
@@ -79,15 +78,15 @@
     NSString* urlString = @"http://www.opensource.apple.com/source/Git/Git-26/src/git-htmldocs/git-commit.txt?txt";
     NSURLRequest* req = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     
-    // This is a very handy way to send an asynchronous method, but only available in iOS5+
-    [NSURLConnection sendAsynchronousRequest:req
-                                       queue:[NSOperationQueue mainQueue]
-                           completionHandler:^(NSURLResponse* resp, NSData* data, NSError* error)
-     {
-         sender.enabled = YES;
-         NSString* receivedText = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
-         self.textView.text = receivedText;
-     }];
+    NSURLSessionDataTask* task = [[NSURLSession sharedSession] dataTaskWithRequest:req
+                                                                 completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                                                                     dispatch_async(dispatch_get_main_queue(), ^{
+                                                                         sender.enabled = YES;
+                                                                         NSString* receivedText = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+                                                                         self.textView.text = receivedText;
+                                                                     });
+                                                                 }];
+    [task resume];
 }
 
 
@@ -130,15 +129,17 @@
     NSString* urlString = @"http://images.apple.com/support/assets/images/products/iphone/hero_iphone4-5_wide.png";
     NSURLRequest* req = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     
-    // This is a very handy way to send an asynchronous method, but only available in iOS5+
-    [NSURLConnection sendAsynchronousRequest:req
-                                       queue:[NSOperationQueue mainQueue]
-                           completionHandler:^(NSURLResponse* resp, NSData* data, NSError* error)
-     {
-         sender.enabled = YES;
-         self.imageView.image = [UIImage imageWithData:data];
-     }];
+
+    NSURLSessionDataTask* task = [[NSURLSession sharedSession] dataTaskWithRequest:req
+                                                                 completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                                                                     dispatch_async(dispatch_get_main_queue(), ^{
+                                                                         sender.enabled = YES;
+                                                                         self.imageView.image = [UIImage imageWithData:data];
+                                                                     });
+                                                                 }];
+    [task resume];
 }
+
 
 - (IBAction)installImageStub:(UISwitch *)sender
 {

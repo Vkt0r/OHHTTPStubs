@@ -127,5 +127,4 @@ class MainViewController: UIViewController {
         self.textView.text = ""
         self.imageView.image = nil
     }
-    
 }
